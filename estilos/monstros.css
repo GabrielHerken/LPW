@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+main {
+    height: 100vh;
+}
+
+.button {
+    position: absolute;
+    height: 100px;
+    top: calc(50vh - 50px);
+    transition: opacity 100ms ease-in;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.button:active {
+    animation-duration: 100ms;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes leftclick {
+    from {
+        left: 10px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes rightclick {
+    from {
+        right: 10px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+#left-button {
+    left: 10px;
+}
+
+#left-button:active {
+    animation-name: leftclick;
+}
+
+#right-button {
+    right: 10px;
+    transform: scaleX(-1);
+}
+
+#right-button:active {
+    animation-name: rightclick;
+}
+
+#monsters {
+    width: 200vw;
+    height: 100vh;
+    display: flex;
+}
+
+.monster-div {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../imagens/agua-viva.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 10vh;
+}
+
+.monster-div::before {
+    content: '';
+    background-image: radial-gradient(#0000, #000f);
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.nextmonster {
+    animation-name: nextmonster;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+.lastmonster {
+    animation-name: lastmonster;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes nextmonster {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes lastmonster {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.monster-div h1 {
+    color:rgb(255, 28, 28);
+    position: relative;
+    font-family: 'Henny Penny';
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    letter-spacing: 3px;
+}
+
+.monster-div p {
+    color:rgb(255, 28, 28);
+    position: relative;
+    font-family: 'Cormorant Garamond';
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    display: inline-block;
+    width: 40ch;
+    font-weight: 600;
+}
+
+header {
+    border-color: rgb(107, 7, 7);
+    background-color: rgba(255, 28, 28, 0.295);
+}
+
+nav a {
+    color: rgb(252, 161, 161);
+}
+
+nav a::after {
+    background-color: rgb(53, 3, 3);
+}
+
+footer {
+    background-color: rgb(41, 2, 2);
+    background-image: none;
+}
+
+.leftblack {
+    width: 40vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.418) 75%,#0000);
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 15px;
+    background-color: #0a0000;
+}
+
+.progress::after {
+    content: '';
+    width: 0;
+    height: 15px;
+    background-color: rgb(41, 2, 2);
+    display: block;
+    border-top-right-radius: 10px;
+}
+
+.progress.anim::after {
+    animation: progressbar 5s linear forwards;
+}
+
+@keyframes progressbar {
+    from {width: 0;}
+    to {width: 100vw;}
+}

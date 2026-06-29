@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piratas</title>
     <link rel="stylesheet" href="../estilos/menu.css">
+    <link rel="stylesheet" href="../estilos/footer.css">
     <link rel="stylesheet" href="../estilos/monstros.css">
     <link rel="shortcut icon" href="../imagens/favico.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../estilos/footer.css">
 </head>
 <body>
     <header>
@@ -22,7 +22,22 @@
         </nav>
     </header>
     <main>
-        
+        <div id="monsters">
+            <div class="monster-div" id="current-monster">
+                <div class="leftblack"></div>
+                <h1>Monstrozão</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, debitis earum nisi voluptatibus temporibus recusandae eum sequi, odio dolor fugiat dolorem ut a sunt nemo. Sed cupiditate ipsam veritatis minus.</p>
+                <div class="progress anim"></div>
+            </div>
+            <div class="monster-div" id="next-monster">
+                <div class="leftblack"></div>
+                <h1>Monstrozão</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, debitis earum nisi voluptatibus temporibus recusandae eum sequi, odio dolor fugiat dolorem ut a sunt nemo. Sed cupiditate ipsam veritatis minus.</p>
+                <div class="progress"></div>
+            </div>
+        </div>
+        <img src="../imagens/leftarrow.png" alt="Monstro Anterior" class="button" id="left-button">
+        <img src="../imagens/leftarrow.png" alt="Monstro Posterior" class="button" id="right-button"> 
     </main>
     <footer>
         <img src="../imagens/caveira.png" alt="logo">
@@ -33,5 +48,96 @@
             <li><a href="./autores.html">Autores</a></li>
         </ul>
     </footer>
+
+    <script>
+        const beforeButton = document.getElementById('left-button');
+        const nextButton = document.getElementById('right-button');
+
+        const monstersDiv = document.getElementById('monsters');
+        const currentDiv = document.getElementById('current-monster');
+        const nextDiv = document.getElementById('next-monster');
+
+        let monstros;
+        let animating = false;
+        let index = 0;
+        let changed;
+
+        function changeMonster(direction) {
+            if (!animating) {
+                if (direction === 'next') {
+                    index++;
+                    if (index == monstros.length) {
+                        index = 0;
+                    }
+
+                    nextDiv.style.backgroundImage = `url(../imagens/${monstros[index].url})`;
+                    nextDiv.getElementsByTagName('h1')[0].innerText = monstros[index].nome;
+                    nextDiv.getElementsByTagName('p')[0].innerText = monstros[index].descricao;
+                    currentDiv.getElementsByClassName('progress')[0].classList.remove('anim');
+                    nextDiv.getElementsByClassName('progress')[0].classList.remove('anim');
+                } else {
+                    nextDiv.style.backgroundImage = `url(../imagens/${monstros[index].url})`;
+                    nextDiv.getElementsByTagName('h1')[0].innerText = monstros[index].nome;
+                    nextDiv.getElementsByTagName('p')[0].innerText = monstros[index].descricao;
+
+                    index--;
+                    if (index == -1) {
+                        index = monstros.length - 1;
+                    }
+
+                    currentDiv.style.backgroundImage = `url(../imagens/${monstros[index].url})`;
+                    currentDiv.getElementsByTagName('h1')[0].innerText = monstros[index].nome;
+                    currentDiv.getElementsByTagName('p')[0].innerText = monstros[index].descricao;
+                    currentDiv.getElementsByClassName('progress')[0].classList.remove('anim');
+                }
+
+
+                animating = true;
+                monstersDiv.classList.add(direction === 'next' ? 'nextmonster' : 'lastmonster');
+                setTimeout(() => {
+                    if (direction === 'next') {
+                        currentDiv.style.backgroundImage = `url(../imagens/${monstros[index].url})`;
+                        currentDiv.getElementsByTagName('h1')[0].innerText = monstros[index].nome;
+                        currentDiv.getElementsByTagName('p')[0].innerText = monstros[index].descricao;
+                    }
+                    currentDiv.getElementsByClassName('progress')[0].classList.add('anim');
+
+                    monstersDiv.classList.remove(direction === 'next' ? 'nextmonster' : 'lastmonster');
+                    changed = Date.now();
+                    const lastChanged = changed;
+                    animating = false;
+
+                    setTimeout(() => {
+                        if (lastChanged == changed) {
+                            changeMonster('next');
+                        }
+                    }, 5000);
+                }, 500);
+            }
+        }
+
+        function startJS() {
+            currentDiv.style.backgroundImage = `url(../imagens/${monstros[0].url})`;
+            currentDiv.getElementsByTagName('h1')[0].innerText = monstros[0].nome;
+            currentDiv.getElementsByTagName('p')[0].innerText = monstros[0].descricao;
+
+            changed = Date.now();
+            const lastChanged = changed;
+
+            setTimeout(() => {
+                if (lastChanged == changed) {
+                    changeMonster('next');
+                }
+            }, 5000);
+
+            beforeButton.addEventListener('click', () => changeMonster('before'));
+            nextButton.addEventListener('click', () => changeMonster('next'));
+        }
+
+        fetch('../objetos/monstros.json')
+            .then(response => response.json())
+            .then(data => {monstros = data; startJS()})
+            .catch(error => console.error(error));
+    </script>
 </body>
 </html>
