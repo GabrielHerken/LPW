@@ -70,26 +70,30 @@ h1 {
     object-fit: cover;
 }
 
-.autor {
+.autor{
+    border-radius: 0 3rem 3rem 0;
+}
+
+.autor, .fontes {
     background-color:#f4ecd8;
     color: #3e2723;
     padding: 1rem 2rem 1rem 4.5rem;
     margin-left: -3.5rem;
     border: 0.2rem solid #b5a481;
-    border-radius: 0 3rem 3rem 0;
     box-shadow: 0 8rem 15rem rgba(0, 0, 0, 0.4);
     flex-grow: 1;
     background-image: radial-gradient(ellipse at 80% 50%, rgba(101, 67, 33, 0.08) 0%, transparent 60%);
 }
 
-.autor h2 {
+.autor h2,  .fontes h2{
     font-family: 'Pirata One', cursive;
     font-size: 2rem;
     margin: 0 0 0.5rem 0;
     color: #8b0000;
 }
 
-.autor .frase {
+.autor .frase, .fontes li{
+    font-family: 'Oldenburg', cursive;
     font-size: 1rem;
     font-style: italic;
     margin: 0;
@@ -112,11 +116,10 @@ h1 {
     background-image: radial-gradient(ellipse at 20% 50%, rgba(101, 67, 33, 0.08) 0%, transparent 60%);
 }
 
-.card-tripulante, .card-tripulante.invertido{
+.card-tripulante, .card-tripulante.invertido, .fontes{
     transition: 0.3s ease;
 }
 
-.card-tripulante:hover, .card-tripulante.invertido:hover{
+.card-tripulante:hover, .fontes:hover, .card-tripulante.invertido:hover{
     transform: translateY(-4vh);
-    box-shadow: 0 15vh 30vh rgba(0,0,0,0.4);
 }
