@@ -93,7 +93,7 @@ h1 {
     color: #8b0000;
 }
 
-.autor .frase, .fontes li{
+.autor .frase, .fontes dd{
     font-family: 'Oldenburg', cursive;
     font-size: 1rem;
     font-style: italic;
@@ -101,6 +101,27 @@ h1 {
     line-height: 1.4;
 }
 
+.fontes dt{
+     font-family: 'Pirata One', cursive;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.fontes dl {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh; 
+    margin-bottom: 4vh;
+}
+
+.fontes dl .pares-fonte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 8px; 
+}
 .card-tripulante.invertido {
     flex-direction: row-reverse;
 }
