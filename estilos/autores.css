@@ -23,6 +23,7 @@ header {
 
 main {
     padding-top: 12vh;
+    min-height: 100vh;
 }
 
 h1 {

@@ -10,6 +10,7 @@
 
 main {
     padding-top: calc(1.25rem * 3 + 4rem);
+    padding-bottom: calc(1.25rem * 3 + 4rem);
 }
 
 h1 {
@@ -56,6 +57,7 @@ li:has(.card-animal) {
 
 .card-animal img {
     width: 100%;
+    aspect-ratio: 1;
     border-radius: 50%;
     grid-column: 1 / 2;
     border:3px solid #c9b37d;
@@ -73,7 +75,7 @@ li:has(.card-animal) {
 
 .card-animal p {
     grid-column: 1 / 3;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-family: 'Cormorant Garamond';
     font-weight: 500;
 }
