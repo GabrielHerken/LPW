@@ -17,6 +17,7 @@ header {
     backdrop-filter: blur(10px);
     background-color: rgba(59, 169, 206, 0.295);
     box-shadow: 0 5px 10px rgba(2, 41, 54, 0.26);
+    z-index: 10;
 }
 
 header img {
