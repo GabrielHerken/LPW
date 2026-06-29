@@ -52,7 +52,6 @@ h1 {
 }
 
 .avatar-foto {
-    width: 8rem;
     height: 8rem;
     background-color: #d4af37;
     border: 0.2rem solid #b5a481;
@@ -62,7 +61,8 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
-    z-index: 2; 
+    z-index: 2;
+    aspect-ratio: 1;
 }
 
 .avatar-foto img {
