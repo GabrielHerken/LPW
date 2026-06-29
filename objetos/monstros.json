@@ -1,17 +1,37 @@
 [
     {
-        "url": "agua-viva.jpg",
-        "nome": "Agua Viva",
-        "descricao": "A agua viva não morre"
+        "url": "kraken.jpg",
+        "nome": "Kraken",
+        "descricao": "Meu avô sempre dizia para nunca confiar na calmaria do mar, pois o perigo adora o silêncio. O Kraken é uma lula colossal que consegue abraçar o maior dos navios de guerra com seus tentáculos e puxá-lo direto para o fundo. "
     },
     {
-        "url": "caranguejo.jpeg",
-        "nome": "Caranguejo",
-        "descricao": "Ele anda de ladooo ooooooo oooooooooooooooo ooooooooo oooooooooooooo ooooooooooooooooooo oooooooooo oooooooooooooo oooooo oooo oooooo oooo oooooooooo ooooooo oooooooo"
+        "url": "leviata.jpg",
+        "nome": "Leviatã",
+        "descricao": " Dizem as lendas que quando ele nada perto da superfície, o oceano ferve e seus olhos brilham tanto que parecem o próprio amanhecer nas trevas! O Leviatã é uma serpente marinha ancestral, tão colossal que suas escamas são como escudos de ferro que nenhuma espada ou canhão consegue arranhar. "
     },
     {
-        "url": "baleia.jpg",
-        "nome": "Baleia",
-        "descricao": "A baleia azul é o maior animal de todos"
-    }
+        "url": "sereia.png",
+        "nome": "Sereia",
+        "descricao": "“Existem cantos que não deveriam ser seguidos. Dizem que as sereias não pedem atenção... elas a roubam. Seu canto doce engana até os marinheiros mais experientes, levando-os a seguir vozes que só existem para afundar sonhos.”"
+    },
+     {
+        "url": "megalodon.webp",
+        "nome": "Megalodon",
+        "descricao": "O Megalodon foi um tubarão tão colossal que o próprio oceano parecia pequeno diante dele. Dizem que, em águas mais profundas, ainda existe a sensação de que algo imenso passa devagar… sem pressa, mas com fome antiga."
+     },
+    {
+        "url": "serpente.png",
+        "nome": "Jörmungandr",
+        "descricao": "As lendas nórdicas já avisavam pra ter cuidado no dia em que o mar começasse a subir sem explicação, porque isso não era normal. Jörmungandr é o sinal do apocalipse! Uma serpente gigante que solta a própria cauda, sai dos abismos, agita os oceanos e, quando aparece, é como se o fim do mundo estivesse começando.”"
+     },
+     {
+        "url": "rei-dos-mares.jpg",
+        "nome": "Rei dos Mares",
+        "descricao": "O Rei dos Mares é um monstro colossal da Calm Belt, uma força da natureza brutal e lendária que domina os oceanos como seu território absoluto e surge como uma ameaça apocalíptica capaz de despedaçar frotas inteiras em segundos."
+     },
+     {
+        "url": "cthulhu.png",
+        "nome": "Cthulhu",
+        "descricao": "Cthulhu é um deus colossal das profundezas de R'lyeh, uma força cósmica brutal e ancestral que domina o oceano como seu território absoluto e surge como uma ameaça apocalíptica capaz de despedaçar frotas inteiras e a própria sanidade humana em segundos."
+     }
 ]
